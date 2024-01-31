@@ -102,7 +102,7 @@ class IcebergSource(BigQuerySource):
         assert data_source.HasField("custom_options")
 
         # Decode the iceberg_options to retrieve fields
-        iceberg_options = json.loads(data_source.custom_options.decode('utf-8'))
+        iceberg_options = json.loads(data_source.custom_options.value.decode('utf-8'))
         event_types = iceberg_options.get("eventTypes", [])
         date_range = iceberg_options.get("dateRange", "")
         is_streaming = iceberg_options.get("isStreaming", False)
