@@ -59,8 +59,6 @@ class IcebergSource(BigQuerySource):
         if table is None and query is None:
             raise ValueError('No "table" or "query" argument provided.')
 
-        self.bigquery_options = BigQueryOptions(table=table, query=query)
-
         # If no name, use the table as the default name.
         if name is None and table is None:
             raise DataSourceNoNameException()
@@ -68,6 +66,8 @@ class IcebergSource(BigQuerySource):
         assert name
 
         iceberg_options_dict = {
+            "table": table,
+            "query": query,
             "eventTypes": eventTypes,
             "dateRange": dateRange,
             "isStreaming": isStreaming,
@@ -98,11 +98,12 @@ class IcebergSource(BigQuerySource):
         Returns:
             IcebergSource: A new IcebergSource object.
         """
-        assert data_source.HasField("bigquery_options")
         assert data_source.HasField("custom_options")
 
         # Decode the iceberg_options to retrieve fields
         iceberg_options = json.loads(data_source.custom_options.configuration.decode('utf-8'))
+        table = iceberg_options.get("table", "")
+        query = iceberg_options.get("query", "")
         event_types = iceberg_options.get("eventTypes", [])
         date_range = iceberg_options.get("dateRange", "")
         is_streaming = iceberg_options.get("isStreaming", False)
@@ -112,10 +113,10 @@ class IcebergSource(BigQuerySource):
         return IcebergSource(
             name=data_source.name,
             field_mapping=dict(data_source.field_mapping),
-            table=data_source.bigquery_options.table,
+            table=table,
             timestamp_field=data_source.timestamp_field,
             created_timestamp_column=data_source.created_timestamp_column,
-            query=data_source.bigquery_options.query,
+            query=query,
             description=data_source.description,
             tags=dict(data_source.tags),
             owner=data_source.owner,
