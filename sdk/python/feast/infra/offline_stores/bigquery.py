@@ -46,7 +46,7 @@ from feast.on_demand_feature_view import OnDemandFeatureView
 from feast.repo_config import FeastConfigBaseModel, RepoConfig
 from feast.saved_dataset import SavedDatasetStorage
 from feast.usage import get_user_agent, log_exceptions_and_usage
-from feast.infra.utils.bigquery import query_templates
+from feast.infra.utils.bigquery.query_templates import QueryTemplate
 
 from .bigquery_source import (
     BigQueryLoggingDestination,
@@ -287,7 +287,7 @@ class BigQueryOfflineStore(OfflineStore):
                 left_table_query_string=table_reference,
                 entity_df_event_timestamp_col=entity_df_event_timestamp_col,
                 entity_df_columns=entity_schema.keys(),
-                query_template=query_templates.QueryTemplate().MULTIPLE_FEATURE_VIEW_POINT_IN_TIME_JOIN,
+                query_template=QueryTemplate().MULTIPLE_FEATURE_VIEW_POINT_IN_TIME_JOIN,
                 full_feature_names=full_feature_names,
             )
 
