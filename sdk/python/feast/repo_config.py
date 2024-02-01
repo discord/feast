@@ -67,7 +67,7 @@ ONLINE_STORE_CLASS_FOR_TYPE = {
 
 OFFLINE_STORE_CLASS_FOR_TYPE = {
     "file": "feast.infra.offline_stores.file.FileOfflineStore",
-    "bigquery": "discord_ai.lib.py.feast.datastores.iceberg.IcebergOfflineStore", # TODO change it back
+    "bigquery": "feast.infra.offline_stores.bigquery.BigQueryOfflineStore",
     "redshift": "feast.infra.offline_stores.redshift.RedshiftOfflineStore",
     "snowflake.offline": "feast.infra.offline_stores.snowflake.SnowflakeOfflineStore",
     "spark": "feast.infra.offline_stores.contrib.spark_offline_store.spark.SparkOfflineStore",
