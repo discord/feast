@@ -67,6 +67,7 @@ ONLINE_STORE_CLASS_FOR_TYPE = {
 
 OFFLINE_STORE_CLASS_FOR_TYPE = {
     "file": "feast.infra.offline_stores.file.FileOfflineStore",
+    "iceberg": "feast.infra.offline_stores.iceberg.IcebergOfflineStore",
     "bigquery": "feast.infra.offline_stores.bigquery.BigQueryOfflineStore",
     "redshift": "feast.infra.offline_stores.redshift.RedshiftOfflineStore",
     "snowflake.offline": "feast.infra.offline_stores.snowflake.SnowflakeOfflineStore",
