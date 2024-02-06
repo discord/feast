@@ -32,7 +32,9 @@ from feast.errors import (
 from feast.feature_logging import LoggingConfig, LoggingSource
 from feast.feature_view import DUMMY_ENTITY_ID, DUMMY_ENTITY_VAL, FeatureView
 from feast.infra.offline_stores import offline_utils
-from feast.infra.offline_stores.offline_store import IcebergSource, OfflineStore, RetrievalJob, RetrievalMetadata
+from feast.infra.offline_stores.offline_store import OfflineStore, RetrievalJob, RetrievalMetadata
+from feast.infra.offline_stores.iceberg_source import IcebergSource
+
 from feast.infra.registry.base_registry import BaseRegistry
 from feast.on_demand_feature_view import OnDemandFeatureView
 from feast.repo_config import FeastConfigBaseModel, RepoConfig
