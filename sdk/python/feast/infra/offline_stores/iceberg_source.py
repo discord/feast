@@ -134,7 +134,7 @@ class IcebergSource(BigQuerySource):
         """
         return DataSourceProto(
             name=self.name,
-            type=DataSourceProto.BATCH_BIGQUERY,
+            type=DataSourceProto.CUSTOM_SOURCE,
             field_mapping=self.field_mapping,
             custom_options=self.iceberg_options,
             description=self.description,
