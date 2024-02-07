@@ -33,7 +33,6 @@ from feast.feature_logging import LoggingConfig, LoggingSource
 from feast.feature_view import DUMMY_ENTITY_ID, DUMMY_ENTITY_VAL, FeatureView
 from feast.infra.offline_stores import offline_utils
 from feast.infra.offline_stores.offline_store import OfflineStore, RetrievalJob, RetrievalMetadata
-from feast.infra.offline_stores.iceberg_source import IcebergSource
 
 from feast.infra.registry.base_registry import BaseRegistry
 from feast.on_demand_feature_view import OnDemandFeatureView
@@ -120,7 +119,6 @@ class IcebergOfflineStore(OfflineStore):
         end_date: datetime,
     ) -> RetrievalJob:
         assert isinstance(config.offline_store, IcebergOfflineStoreConfig)
-        assert isinstance(data_source, IcebergSource)
         from_expression = data_source.get_table_query_string()
 
         partition_by_join_key_string = ', '.join(join_key_columns)
@@ -169,7 +167,6 @@ class IcebergOfflineStore(OfflineStore):
         end_date: datetime,
     ) -> RetrievalJob:
         assert isinstance(config.offline_store, IcebergOfflineStoreConfig)
-        assert isinstance(data_source, IcebergSource)
         from_expression = data_source.get_table_query_string()
         project_id = config.offline_store.billing_project_id or config.offline_store.project_id
         client = _get_bigquery_client(
@@ -202,8 +199,6 @@ class IcebergOfflineStore(OfflineStore):
     ) -> RetrievalJob:
         # TODO: Add entity_df validation in order to fail before interacting with Iceberg
         assert isinstance(config.offline_store, IcebergOfflineStoreConfig)
-        for fv in feature_views:
-            assert isinstance(fv.batch_source, IcebergSource)
         project_id = config.offline_store.billing_project_id or config.offline_store.project_id
         client = _get_bigquery_client(
             project=project_id,
@@ -345,7 +340,6 @@ class IcebergOfflineStore(OfflineStore):
         progress: Optional[Callable[[int], Any]],
     ):
         assert isinstance(config.offline_store, IcebergOfflineStoreConfig)
-        assert isinstance(feature_view.batch_source, IcebergSource)
 
         pa_schema, column_names = offline_utils.get_pyarrow_schema_from_batch_source(
             config, feature_view.batch_source, timestamp_unit='ns'
