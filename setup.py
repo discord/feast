@@ -36,12 +36,12 @@ REQUIRES_PYTHON = ">=3.8.0"
 
 REQUIRED = [
     # Warning: these libs are troublemakers, keep an eye on them :eyes:
-    "grpcio==1.48.1",
-    "grpcio-tools==1.48.1",
-    "grpcio-reflection==1.48.1",
-    "grpcio-health-checking==1.48.1",
+    "grpcio",
+    "grpcio-tools",
+    "grpcio-reflection",
+    "grpcio-health-checking",
     "mypy-protobuf==1.24",
-    "protobuf<3.20",
+    "protobuf",
 
     "click>=7.0.0,<9.0.0",
     "colorama>=0.3.9,<1",
