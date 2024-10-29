@@ -40,7 +40,7 @@ REQUIRED = [
     "grpcio-tools",
     "grpcio-reflection",
     "grpcio-health-checking",
-    "mypy-protobuf==1.24",
+    "mypy-protobuf",
     "protobuf",
 
     "click>=7.0.0,<9.0.0",
