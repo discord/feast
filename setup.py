@@ -362,13 +362,8 @@ setup(
     entry_points={"console_scripts": ["feast=feast.cli:cli"]},
     use_scm_version=use_scm_version,
     setup_requires=[
-        "setuptools_scm",
-        # Warning: I think this should match the requires above
-        "grpcio==1.48.1",
-        "grpcio-tools==1.48.1",
-        "mypy-protobuf==1.24",
-        "types-protobuf==4.24.0.4",
-        "protobuf<3.20",
+        "pybindgen==0.22.0",  # TODO do we need this?
+        "setuptools_scm>=6.2",  # TODO do we need this?
     ],
     cmdclass={
         "build_python_protos": BuildPythonProtosCommand,
