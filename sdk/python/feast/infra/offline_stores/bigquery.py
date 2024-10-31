@@ -59,7 +59,7 @@ try:
     from google.auth.exceptions import DefaultCredentialsError
     from google.cloud import bigquery
     from google.cloud.bigquery import Client, SchemaField, Table
-    from google.cloud.bigquery._pandas_helpers import ARROW_SCALAR_IDS_TO_BQ
+    from google.cloud.bigquery._pyarrow_helpers import _ARROW_SCALAR_IDS_TO_BQ
     from google.cloud.storage import Client as StorageClient
 
 except ImportError as e:
@@ -786,10 +786,10 @@ def arrow_schema_to_bq_schema(arrow_schema: pyarrow.Schema) -> List[SchemaField]
     for field in arrow_schema:
         if pyarrow.types.is_list(field.type):
             detected_mode = "REPEATED"
-            detected_type = ARROW_SCALAR_IDS_TO_BQ[field.type.value_type.id]
+            detected_type = _ARROW_SCALAR_IDS_TO_BQ[field.type.value_type.id]
         else:
             detected_mode = "NULLABLE"
-            detected_type = ARROW_SCALAR_IDS_TO_BQ[field.type.id]
+            detected_type = _ARROW_SCALAR_IDS_TO_BQ[field.type.id]
 
         bq_schema.append(
             SchemaField(name=field.name, field_type=detected_type, mode=detected_mode)
