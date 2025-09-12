@@ -19,8 +19,8 @@ import pandas as pd
 import pyarrow
 import pyarrow as pa
 from dateutil import parser
-from pydantic import StrictStr, root_validator
-from pydantic.typing import Literal
+from pydantic.v1 import StrictStr, root_validator
+from pydantic.v1.typing import Literal
 from pytz import utc
 
 from feast import OnDemandFeatureView, RedshiftSource

@@ -19,7 +19,7 @@ import pandas as pd
 import pyarrow as pa
 from jinja2 import BaseLoader, Environment
 from psycopg2 import sql
-from pydantic.typing import Literal
+from pydantic.v1.typing import Literal
 from pytz import utc
 
 from feast.data_source import DataSource

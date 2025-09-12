@@ -5,7 +5,7 @@ from typing import Any, Dict, List, Literal, Optional, Tuple, Union
 import numpy as np
 import pandas as pd
 import pyarrow
-from pydantic import Field, FilePath, SecretStr, StrictBool, StrictStr, root_validator
+from pydantic.v1 import Field, FilePath, SecretStr, StrictBool, StrictStr, root_validator
 from trino.auth import (
     BasicAuthentication,
     CertificateAuthentication,

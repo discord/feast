@@ -7,8 +7,8 @@ from enum import Enum
 from threading import Lock
 from typing import Any, Callable, List, Optional, Set, Union
 
-from pydantic import Field, StrictStr
-from pydantic.schema import Literal
+from pydantic.v1 import Field, StrictStr
+from pydantic.v1.schema import Literal
 
 import feast
 from feast import usage

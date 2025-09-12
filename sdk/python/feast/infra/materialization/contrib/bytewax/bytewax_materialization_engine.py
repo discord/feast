@@ -7,7 +7,7 @@ from kubernetes import client
 from kubernetes import config as k8s_config
 from kubernetes import utils
 from kubernetes.utils import FailToCreateError
-from pydantic import StrictStr
+from pydantic.v1 import StrictStr
 from tqdm import tqdm
 
 from feast import FeatureView, RepoConfig

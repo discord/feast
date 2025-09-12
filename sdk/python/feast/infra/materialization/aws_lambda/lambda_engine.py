@@ -7,7 +7,7 @@ from datetime import datetime
 from typing import Callable, List, Literal, Optional, Sequence, Union
 
 import boto3
-from pydantic import StrictStr
+from pydantic.v1 import StrictStr
 from tqdm import tqdm
 
 from feast import utils

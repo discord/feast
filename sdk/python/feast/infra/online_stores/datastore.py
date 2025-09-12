@@ -19,8 +19,8 @@ from queue import Empty, Queue
 from threading import Lock, Thread
 from typing import Any, Callable, Dict, Iterator, List, Optional, Sequence, Tuple
 
-from pydantic import PositiveInt, StrictStr
-from pydantic.typing import Literal
+from pydantic.v1 import PositiveInt, StrictStr
+from pydantic.v1.typing import Literal
 
 from feast import Entity, utils
 from feast.errors import FeastProviderLoginError

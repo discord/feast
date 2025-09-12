@@ -6,7 +6,7 @@ from pathlib import Path
 from threading import Lock
 from typing import Any, Callable, List, Optional, Set, Union
 
-from pydantic import StrictStr
+from pydantic.v1 import StrictStr
 from sqlalchemy import (  # type: ignore
     BigInteger,
     Column,

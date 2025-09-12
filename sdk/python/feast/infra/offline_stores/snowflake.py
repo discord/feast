@@ -22,8 +22,8 @@ from typing import (
 import numpy as np
 import pandas as pd
 import pyarrow
-from pydantic import Field, StrictStr
-from pydantic.typing import Literal
+from pydantic.v1 import Field, StrictStr
+from pydantic.v1.typing import Literal
 from pytz import utc
 
 from feast import OnDemandFeatureView

@@ -7,8 +7,8 @@ from typing import Any, Callable, Dict, List, Optional, Sequence, Set, Tuple
 import google
 from google.cloud import bigtable
 from google.cloud.bigtable import row_filters
-from pydantic import StrictStr
-from pydantic.typing import Literal
+from pydantic.v1 import StrictStr
+from pydantic.v1.typing import Literal
 
 from feast import Entity, FeatureView, utils
 from feast.feature_view import DUMMY_ENTITY_NAME

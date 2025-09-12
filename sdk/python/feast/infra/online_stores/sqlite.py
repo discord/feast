@@ -18,8 +18,8 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional, Sequence, Tuple
 
-from pydantic import StrictStr
-from pydantic.schema import Literal
+from pydantic.v1 import StrictStr
+from pydantic.v1.schema import Literal
 
 from feast import Entity
 from feast.feature_view import FeatureView

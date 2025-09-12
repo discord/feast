@@ -10,7 +10,7 @@ import pyarrow
 import pyarrow.dataset
 import pyarrow.parquet
 import pytz
-from pydantic.typing import Literal
+from pydantic.v1.typing import Literal
 
 from feast.data_source import DataSource
 from feast.errors import (

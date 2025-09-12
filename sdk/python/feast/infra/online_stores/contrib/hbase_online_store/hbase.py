@@ -4,7 +4,7 @@ from datetime import datetime
 from typing import Any, Callable, Dict, List, Optional, Sequence, Tuple
 
 from happybase import Connection
-from pydantic.typing import Literal
+from pydantic.v1.typing import Literal
 
 from feast import Entity
 from feast.feature_view import FeatureView
