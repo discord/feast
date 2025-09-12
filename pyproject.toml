@@ -1,41 +1,34 @@
 [build-system]
 requires = [
+  "pybindgen==0.22.0",
+  "setuptools>=60",
   "setuptools_scm>=6.2",
   "sphinx!=4.0.0",
-
-  "setuptools>=60",
   "wheel",
-  "grpcio==1.48.1",
-  "grpcio-tools==1.48.1",
-  "mypy-protobuf==1.24",
-  "protobuf<3.20",
 ]
-build-backend = "setuptools.build_meta"
 
 [tool.setuptools_scm]
 # Including this section is comparable to supplying use_scm_version=True in setup.py.
 
-[tool.black]
+[tool.ruff]
 line-length = 88
-target-version = ['py38']
-include = '\.pyi?$'
-exclude = '''
-(
-  /(
-      \.eggs         # exclude a few common directories in the
-    | \.git          # root of the project
-    | \.hg
-    | \.mypy_cache
-    | \.tox
-    | \.venv
-    | _build
-    | buck-out
-    | build
-    | dist
-    | pb2.py
-    | \.pyi
-    | protos
-    | sdk/python/feast/embedded_go/lib
-  )/
-)
-'''
+target-version = "py39"
+include = ["*.py", "*.pyi"]
+
+[tool.ruff.format]
+# exclude a few common directories in the root of the project
+exclude = [ 
+  ".eggs", 
+  ".git", 
+  ".hg", 
+  ".mypy_cache",
+  ".tox", 
+  ".venv", 
+  "_build", 
+  "buck-out",
+  "build",
+  "dist",
+  "pb2.py",
+  ".pyi",
+  "protos",
+  "sdk/python/feast/embedded_go/lib"]

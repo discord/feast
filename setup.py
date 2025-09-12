@@ -36,12 +36,12 @@ REQUIRES_PYTHON = ">=3.8.0"
 
 REQUIRED = [
     # Warning: these libs are troublemakers, keep an eye on them :eyes:
-    "grpcio==1.48.1",
-    "grpcio-tools==1.48.1",
-    "grpcio-reflection==1.48.1",
-    "grpcio-health-checking==1.48.1",
-    "mypy-protobuf==1.24",
-    "protobuf<3.20",
+    "grpcio",
+    "grpcio-tools",
+    "grpcio-reflection",
+    "grpcio-health-checking",
+    "mypy-protobuf",
+    "protobuf",
 
     "click>=7.0.0,<9.0.0",
     "colorama>=0.3.9,<1",
@@ -49,12 +49,12 @@ REQUIRED = [
     "Jinja2>=2,<4",
     "jsonschema",
     "mmh3",
-    "numpy>=1.22,<1.25",
-    "pandas>=1.4.3,<2",
+    "numpy>=1.22,<2",
+    "pandas>=1.4.3,<3",
     # For some reason pandavro higher than 1.5.* only support pandas less than 1.3.
     "pandavro~=1.5.0",
     "proto-plus>=1.20.0,<2",
-    "pyarrow>=4,<12",
+    "pyarrow>=9.0.0",
     "pydantic>=2.11.7,<3",
     "pygments>=2.12.0,<3",
     "PyYAML>=5.4.0,<7",
@@ -362,13 +362,8 @@ setup(
     entry_points={"console_scripts": ["feast=feast.cli:cli"]},
     use_scm_version=use_scm_version,
     setup_requires=[
-        "setuptools_scm",
-        # Warning: I think this should match the requires above
-        "grpcio==1.48.1",
-        "grpcio-tools==1.48.1",
-        "mypy-protobuf==1.24",
-        "types-protobuf==4.24.0.4",
-        "protobuf<3.20",
+        "pybindgen==0.22.0",  # TODO do we need this?
+        "setuptools_scm>=6.2",  # TODO do we need this?
     ],
     cmdclass={
         "build_python_protos": BuildPythonProtosCommand,
