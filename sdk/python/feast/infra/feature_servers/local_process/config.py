@@ -1,4 +1,4 @@
-from pydantic.typing import Literal
+from pydantic.v1.typing import Literal
 
 from feast.infra.feature_servers.base_config import BaseFeatureServerConfig
 

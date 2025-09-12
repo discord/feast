@@ -19,8 +19,8 @@ import numpy as np
 import pandas as pd
 import pyarrow
 import pyarrow.parquet
-from pydantic import ConstrainedStr, StrictStr, validator
-from pydantic.typing import Literal
+from pydantic.v1 import ConstrainedStr, StrictStr, validator
+from pydantic.v1.typing import Literal
 from tenacity import Retrying, retry_if_exception_type, stop_after_delay, wait_fixed
 
 from feast import flags_helper

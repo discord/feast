@@ -5,8 +5,8 @@ from datetime import datetime
 from typing import Any, Callable, Dict, List, Optional, Sequence, Tuple
 
 import pandas as pd
-from pydantic import Field, StrictStr
-from pydantic.schema import Literal
+from pydantic.v1 import Field, StrictStr
+from pydantic.v1.schema import Literal
 
 from feast.entity import Entity
 from feast.feature_view import FeatureView

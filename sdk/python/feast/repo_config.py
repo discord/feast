@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Any
 
 import yaml
-from pydantic import (
+from pydantic.v1 import (
     BaseModel,
     Field,
     StrictInt,
@@ -14,8 +14,8 @@ from pydantic import (
     root_validator,
     validator,
 )
-from pydantic.error_wrappers import ErrorWrapper
-from pydantic.typing import Dict, Optional
+from pydantic.v1.error_wrappers import ErrorWrapper
+from pydantic.v1.typing import Dict, Optional
 
 from feast.errors import (
     FeastFeatureServerTypeInvalidError,

@@ -10,8 +10,8 @@ import pandas
 import pyarrow
 import pyarrow as pa
 import sqlalchemy
-from pydantic.types import StrictStr
-from pydantic.typing import Literal
+from pydantic.v1.types import StrictStr
+from pydantic.v1.typing import Literal
 from sqlalchemy import create_engine
 from sqlalchemy.engine import Engine
 from sqlalchemy.orm import sessionmaker

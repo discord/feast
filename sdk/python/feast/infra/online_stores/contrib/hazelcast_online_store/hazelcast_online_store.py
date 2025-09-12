@@ -26,7 +26,7 @@ import pytz
 from hazelcast.client import HazelcastClient
 from hazelcast.core import HazelcastJsonValue
 from hazelcast.discovery import HazelcastCloudDiscovery
-from pydantic import StrictStr
+from pydantic.v1 import StrictStr
 
 from feast import Entity, FeatureView, RepoConfig
 from feast.infra.key_encoding_utils import serialize_entity_key

@@ -10,7 +10,7 @@ from fastapi import FastAPI, HTTPException, Request, Response, status
 from fastapi.logger import logger
 from fastapi.params import Depends
 from google.protobuf.json_format import MessageToDict, Parse
-from pydantic import BaseModel
+from pydantic.v1 import BaseModel
 
 import feast
 from feast import proto_json, utils

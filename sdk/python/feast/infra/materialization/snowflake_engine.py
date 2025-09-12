@@ -7,7 +7,7 @@ from typing import Callable, List, Literal, Optional, Sequence, Union
 import click
 import pandas as pd
 from colorama import Fore, Style
-from pydantic import Field, StrictStr
+from pydantic.v1 import Field, StrictStr
 from pytz import utc
 from tqdm import tqdm
 

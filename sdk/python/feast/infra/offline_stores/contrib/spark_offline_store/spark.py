@@ -11,7 +11,7 @@ import pandas as pd
 import pyarrow
 import pyarrow.parquet as pq
 import pyspark
-from pydantic import StrictStr
+from pydantic.v1 import StrictStr
 from pyspark import SparkConf
 from pyspark.sql import SparkSession
 from pytz import utc

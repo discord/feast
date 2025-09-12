@@ -1,7 +1,7 @@
 from enum import Enum
 from typing import Optional
 
-from pydantic import StrictStr
+from pydantic.v1 import StrictStr
 
 from feast.repo_config import FeastConfigBaseModel
 

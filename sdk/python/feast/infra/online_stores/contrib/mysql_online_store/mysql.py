@@ -5,7 +5,7 @@ from typing import Any, Callable, Dict, List, Optional, Sequence, Tuple
 
 import pymysql
 import pytz
-from pydantic import StrictStr
+from pydantic.v1 import StrictStr
 from pymysql.connections import Connection
 from pymysql.cursors import Cursor
 

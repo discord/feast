@@ -1,6 +1,6 @@
 from typing import Optional
 
-from pydantic import StrictBool, StrictInt
+from pydantic.v1 import StrictBool, StrictInt
 
 from feast.repo_config import FeastConfigBaseModel
 
