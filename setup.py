@@ -55,7 +55,7 @@ REQUIRED = [
     "pandavro~=1.5.0",
     "proto-plus>=1.20.0,<2",
     "pyarrow>=9.0.0",
-    "pydantic>=2.11.7,<3",
+    "pydantic>=2.0.0,<3",
     "pygments>=2.12.0,<3",
     "PyYAML>=5.4.0,<7",
     "requests",
